@@ -24,7 +24,7 @@ rclone mount gphotos: /mnt/gphotos --daemon --allow-other --dir-cache-time 5000h
 rclone mount gdrive: /mnt/gdrive --daemon --allow-other --dir-cache-time 1h --poll-interval 10s --cache-dir=/mnt/rcache --drive-pacer-min-sleep 10ms --drive-pacer-burst 200 --vfs-cache-mode writes --vfs-cache-max-size 20G --vfs-cache-max-age 1h --vfs-cache-poll-interval 5m --bwlimit-file 32M
 ```
 
-# Testing 
+# Testing index
 ``` bash
-rclone mount gdrive: /mnt/gdrive --daemon --allow-other --dir-cache-time 1h --poll-interval 10s --cache-dir=/mnt/rcache --drive-pacer-min-sleep 10ms --drive-pacer-burst 200 --vfs-cache-mode off --vfs-cache-max-size 10G --vfs-cache-max-age 1h --vfs-cache-poll-interval 5m --bwlimit-file 32M --read-only
+rclone mount gdrive: /mnt/gdrive --daemon --allow-other --dir-cache-time 2m0s --poll-interval 10s --cache-dir=/mnt/rcache --drive-pacer-min-sleep 10ms --drive-pacer-burst 200 --vfs-cache-mode off --vfs-cache-max-size 5G --vfs-cache-max-age 2m0s --vfs-cache-poll-interval 5m --bwlimit-file 32M --read-only
 ```
