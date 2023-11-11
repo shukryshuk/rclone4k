@@ -28,3 +28,8 @@ rclone mount gdrive: /mnt/gdrive --daemon --allow-other --dir-cache-time 1h --po
 ``` bash
 sudo rclone mount gdrive: /mnt/gdrive --daemon --allow-other --dir-cache-time 2m --poll-interval 10s --cache-dir=/mnt/rcache --drive-pacer-min-sleep 10ms --drive-pacer-burst 200 --vfs-cache-mode writes --vfs-cache-max-size 5G --vfs-cache-max-age 2m --vfs-cache-poll-interval 5m --bwlimit-file 32M --read-only
 ```
+
+# Testing debris
+``` bash
+sudo rclone mount debrid: /mnt/debrid --daemon --allow-other --dir-cache-time 2m --poll-interval 10s --cache-dir=/mnt/rcache --drive-pacer-min-sleep 10ms --drive-pacer-burst 200 --vfs-cache-mode writes --vfs-cache-max-size 5G --vfs-cache-max-age 2m --vfs-cache-poll-interval 5m --bwlimit-file 32M --read-only
+```
