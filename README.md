@@ -36,7 +36,7 @@ sudo rclone mount debrid: /mnt/debrid --daemon --allow-other --dir-cache-time 2m
 
 # Testing debris rclone
 ``` bash
-docker run --restart=unless-stopped \
+docker run --rm \
     --network=container:gluetun \
     --volume ~/.config/rclone:/config/rclone \
     --volume ~/data:/data:shared \
