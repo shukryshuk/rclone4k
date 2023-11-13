@@ -46,3 +46,16 @@ docker run -d --restart=unless-stopped \
     rclone/rclone \
     mount debrid: /data/mount --dir-cache-time 3h30m --poll-interval 10s --cache-dir=/data/rcache --vfs-cache-mode writes --vfs-cache-max-size 30G --vfs-cache-max-age 3h30m --vfs-cache-poll-interval 5m --bwlimit-file 32M --read-only
 ```
+
+# Test 2 debris rclone
+``` bash
+docker run -d --restart=unless-stopped \
+    --network=container:gluetun \
+    --volume ~/.config/rclone:/config/rclone \
+    --volume ~/data:/data:shared \
+    --user $(id -u):$(id -g) \
+    --volume /etc/passwd:/etc/passwd:ro --volume /etc/group:/etc/group:ro \
+    --device /dev/fuse --cap-add SYS_ADMIN --security-opt apparmor:unconfined \
+    rclone/rclone \
+    mount debrid: /data/mount --dir-cache-time 10s --multi-thread-streams=0 --cutoff-mode=cautious --vfs-cache-mode minimal --network-mode --buffer-size=0 --read-only
+```
